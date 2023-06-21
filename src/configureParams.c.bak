@@ -22,12 +22,12 @@ int configureParams1D1thODE(double *initArgue, double *initValue, double *finalA
     scanf("%d", &ns);
     *numberStep = ns;
 
-    if ((*finalArgue - *initArgue) < 0)
+    if ((finalArgue - initArgue) < 0)
     {
         *msg = "Error: Invalid initial condition: tFinal less then tInitial\n";
         return -1;
     };
-    if (fabs(*finalArgue - *initArgue) <= 1.e-16)
+    if (fabs(finalArgue - initArgue) <= 1.e-16)
     {
         *msg = "Error: Invalid initial condition!: fabs(tFinal - tInitial) <= 1.e-16\n";
         return -1;
